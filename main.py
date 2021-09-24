@@ -1,20 +1,18 @@
 import json
 
-with open(r"DB/materials.json" ) as material_db :
+with open(r"DB/materials.json") as material_db:
     material = json.load(material_db)
 
-# days = {"D1":'',"D2":'',"D3":'',"D4":'',"D5":''}
-days = ["D1","D2","D3","D4","D5"]
 
-# periods = { "p1": '' , "p2":'' , "p3":'' ,
-#          "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''}
+days=["D1","D2","D3","D4","D5"]
+
 periods = ["p1" , "p2" , "p3" , "p4" , "p5", "p6" , 'p7' , "p8"]
 
-table = {"D1":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''},
-         "D2":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''},
-         "D3":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''},
-         "D4":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''},
-         "D5":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''}}
+table = {"D1":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "p8":''},
+         "D2":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "p8":''},
+         "D3":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "p8":''},
+         "D4":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "p8":''},
+         "D5":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "p8":''}}
 
 
 for subject in material.keys() :
@@ -39,7 +37,7 @@ for subject in material.keys() :
                 except :
                     pass
                 finally:
-                    table[lec_day][periods[lec_index]] = subject
+                    table[lec_day][periods[lec_index]] = subject , material[subject]["Group"]
 
                     #############################################
         for sec_index in range(material[subject]['section']['period']["S_P"]-1 , material[subject]['section']['period']["E_P"] , 1) :
@@ -53,6 +51,8 @@ for subject in material.keys() :
                 except :
                     pass
                 finally:
-                    table[sec_day][periods[sec_index]] = subject
+
+                    table[sec_day][periods[sec_index]] = subject , material[subject]["Group"]
 
 print(json.dumps(table , indent=4))
+
