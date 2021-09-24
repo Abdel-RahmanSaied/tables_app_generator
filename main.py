@@ -33,7 +33,7 @@ table = {"D1":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7'
          "D5":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''}}
 
 for i in material.keys() :
-        for day in days.keys() :
+        for day in days :
                 #check day if found
             if i['lecture']['Day'] == day :
                 #check period content for lecture
@@ -48,3 +48,4 @@ for i in material.keys() :
                 sec_e_p = periods[i["section"]['period']["E_P"]-1]
                 if len(table[sec_s_p:sec_e_p]) == 0 :
                     table[sec_s_p:sec_e_p] = i
+print(table)
