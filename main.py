@@ -33,19 +33,18 @@ table = {"D1":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7'
          "D5":{"p1": '' , "p2":'' , "p3":'' , "p4":'' , "p5":'' , "p6":'' , 'p7':'' , "p8":''}}
 
 for i in material.keys() :
-        for day in days :
-                #check day if found
-            if i['lecture']['Day'] == day :
-                #check period content for lecture
-                lec_s_p = periods[i['lecture']['period']["S_P"]-1]
-                lec_e_p = periods[i['lecture']['period']["E_P"]-1]
-                if len(table[lec_s_p:lec_e_p]) == 0 :
-                    table[lec_s_p:lec_e_p] = i
-                #check day if found
-            if i["section"]['Day'] == day :
-                #check period content for Section
-                sec_s_p = periods[i["section"]['period']["S_P"]-1]
-                sec_e_p = periods[i["section"]['period']["E_P"]-1]
-                if len(table[sec_s_p:sec_e_p]) == 0 :
-                    table[sec_s_p:sec_e_p] = i
+        #check day if found
+        lec_day =material[i]['lecture']['Day']
+        #check period content for lecture
+        lec_s_p = periods[material[i]['lecture']['period']["S_P"]-1]
+        lec_e_p = periods[material[i]['lecture']['period']["E_P"]-1]
+        if len(table[lec_s_p:lec_e_p]) == 0 :
+            table[lec_s_p:lec_e_p] = i
+        #check day if found
+        lec_day =material[i]['section']['Day']
+        #check period content for Section
+        sec_s_p = periods[i["section"]['period']["S_P"]-1]
+        sec_e_p = periods[i["section"]['period']["E_P"]-1]
+        if len(table[sec_s_p:sec_e_p]) == 0 :
+            table[sec_s_p:sec_e_p] = i
 print(table)
