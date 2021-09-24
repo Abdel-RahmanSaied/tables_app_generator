@@ -1,0 +1,22 @@
+{
+"math" : { "Group":"G1" ,
+        "lecture": {"Day":"D1",
+              "period":{"S_P":1 , "E_P":3}} ,
+        "section": {"Day" : "D3" , "period": {"S_P":1 , "E_P":2}
+        }
+} ,
+
+"physics" : { "Group":"G1" ,
+        "lecture": {"Day":"D1",
+              "period":{"S_P":4 , "E_P":6}} ,
+        "section": {"Day" : "D3" , "period": {"S_P":3 , "E_P":4}
+        }
+}  ,
+
+"english" :  { "Group":"G1" ,
+        "lecture": {"Day":"D1",
+              "period":{"S_P":7 , "E_P":8}} ,
+        "section": {"Day" : "D3" , "period": {"S_P":5,"E_P":6}}}
+
+  }
+

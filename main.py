@@ -1,19 +1,7 @@
 import json
 
-material = {
-'math' : { "Group":"G1" ,
-        'lecture':dict(Day="D1", period={"S_P":1 , "E_P":3}) ,
-        "section": dict(Day="D3" , period={"S_P":1 , "E_P":2}) } ,
-
-'physics' : { "Group":"G1" ,
-        'lecture':dict(Day="D1", period={"S_P":4 , "E_P":6}) ,
-        "section": dict(Day="D3" , period={"S_P":3 , "E_P":4}) } ,
-
-'english' :  { "Group":"G1" ,
-        'lecture':dict(Day="D1", period={"S_P":7 , "E_P":8}) ,
-        "section": dict(Day="D3" , period={"S_P":5 , "E_P":6}) }
-
-}
+with open(r"DB/materials.json" ) as material_db :
+    material = json.load(material_db)
 
 # days = {"D1":'',"D2":'',"D3":'',"D4":'',"D5":''}
 days = ["D1","D2","D3","D4","D5"]
