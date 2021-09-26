@@ -1,7 +1,0 @@
-pyuic5 forms/login_view.ui -o views/login_view.py
-pyuic5 forms/main_view.ui -o views/main_view.py
-pyuic5 forms/predict_view.ui -o views/predict_view.py
-pyuic5 forms/train_view.ui -o views/train_view.py
-
-
-pyrcc5 app_resources.qrc -o app_resources_rc.py
