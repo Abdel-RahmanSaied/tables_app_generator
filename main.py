@@ -16,13 +16,13 @@ table = {"D1":{"p1": '', "p2":'', "p3":'', "p4":'', "p5":'', "p6":'', 'p7':'', "
 
 
 for subject in material.keys() :
-        #check day if found
+        # check day if found
         lec_day =material[subject]['lecture']['Day']
         sec_day = material[subject]['section']['Day']
-        #period content for lecture
+        # period content for lecture
         lec_s_p = periods[material[subject]['lecture']['period']["S_P"]-1]
         lec_e_p = periods[material[subject]['lecture']['period']["E_P"]-1]
-        #  period content for Section
+        # period content for Section
         sec_s_p = periods[material[subject]["section"]['period']["S_P"] - 1]
         sec_e_p = periods[material[subject]["section"]['period']["E_P"] - 1]
 
