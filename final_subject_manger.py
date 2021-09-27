@@ -1,3 +1,5 @@
+import itertools as it
+import json
 class New_Subject_Manger():
     def __init__(self):
         pass
@@ -62,9 +64,28 @@ class New_Subject_Manger():
                 #return table of lectures and sections if available
                 #return false if not available
 
-    def subject_generator(self):
+    def subject_generator(self,material):
         #take group of eatch of subject and pass it to lecture checker
-        pass
+
+        sub_list = []
+        all_sub_list = []
+        groups_count = {}
+        for sub_name in material.keys():
+            group_name = material[sub_name]["Groups"]
+            counter = 0
+            for group_num in group_name.keys():
+                sub_list_material = {sub_name: {group_num: group_name[group_num]}}
+                sub_list.append(sub_list_material)
+                counter += 1
+            groups_count[sub_name] = counter
+        last_index = 0
+        for all_sub_index in groups_count.keys():
+            all_sub_list.append(sub_list[last_index:last_index + groups_count[all_sub_index]])
+            last_index += groups_count[all_sub_index]
+
+        combinations = it.product(*all_sub_list)
+        result = list(combinations)
+        return result
 
     def table_viewer(self):
         #take table from section and put it in list
