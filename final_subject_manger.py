@@ -13,19 +13,54 @@ class New_Subject_Manger():
                  "D5": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''}}
 
         for sub_name in subject_table_to_check.keys():
-            group_name = subject_table_to_check[sub_name]["Groups"]
-            start_lecture_period = subject_table_to_check[sub_name]["Groups"][group_name]["lecture"]["period"]["S_P"] - 1
-            end_lecture_period = materials[group_name]['lecture']['period']["E_P"]
-            lec_day = materials[group_name]['lecture']['Day']
-            # return table of lectures  if available and pass it to section checker
-            #return false if not available
-        pass
+            group_name = subject_table_to_check[sub_name]
+            for group_num in group_name.keys() :
+                start_lecture_period = group_name[group_num]["lecture"]["period"]["S_P"] - 1
+                end_lecture_period = group_name[group_num]["lecture"]["period"]["E_P"]
+                lec_day = group_name[group_num]['lecture']['Day']
+                ##################################
+                lec_checker = []
+                avilability_checker = False
+                for lec_index in range(start_lecture_period, end_lecture_period, 1):
+                    if len(table[lec_day][periods[lec_index]]) == 0:
+                        lec_checker.append(True)
+                        try:
+                            if lec_checker[0] == True and lec_checker[1] == True and lec_checker[2] == True:
+                                table[lec_day][periods[lec_index]] = sub_name, group_num
+                                avilability_checker = True
+                        except:
+                            return avilability_checker
+                        else:
+                            return table
+                # return table of lectures  if available and pass it to section checker
+                #return false if not available
 
-    def section_checker(self , table_of_lectures:dict) :
+    def section_checker(self, subject_table_to_check:dict ,table_of_lectures:dict  ):
         #check section period availabitiy in table
-        #return table of lectures and sections if available
-        #return false if not available
-        pass
+        periods = ["p1", "p2", "p3", "p4", "p5", "p6", 'p7', "p8"]
+        for sub_name in subject_table_to_check.keys():
+            group_name = subject_table_to_check[sub_name]
+            for group_num in group_name.keys() :
+                start_section_period = group_name[group_num]["section"]["period"]["S_P"] - 1
+                end_section_period = group_name[group_num]["section"]["period"]["E_P"]
+                lec_day = group_name[group_num]['section']['Day']
+                ##################################
+                sec_checker = []
+                avilability_checker = False
+                for lec_index in range(start_section_period, end_section_period, 1):
+                    if len(table_of_lectures[lec_day][table_of_lectures[lec_index]]) == 0:
+                        sec_checker.append(True)
+                        try:
+                            if sec_checker[0] == True and sec_checker[1] == True and sec_checker[2] == True:
+                                table_of_lectures[lec_day][periods[lec_index]] = sub_name, group_num
+                                avilability_checker = True
+                        except:
+                            return avilability_checker
+                        else:
+                            return table_of_lectures
+
+                #return table of lectures and sections if available
+                #return false if not available
 
     def subject_generator(self):
         #take group of eatch of subject and pass it to lecture checker
