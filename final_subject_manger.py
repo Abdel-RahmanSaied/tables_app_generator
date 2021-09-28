@@ -50,16 +50,16 @@ class Subject_Manger():
                  "D4": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''},
                  "D5": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''}}
         #main variables
-        # for subject_name in subject_table_to_check.keys() :
-        #     group_name = subject_table_to_check[subject_name][subject_name]
-        #     for group_num in group_name.keys() :
-        #         lec_day = group_name[group_num]['lecture']['Day']
-        #         start_lecture_period = group_name[group_num]["lecture"]["period"]["S_P"] - 1
-        #         end_lecture_period = group_name[group_num]["lecture"]["period"]["E_P"]
-        # # fill lecture period  in table
-        # ##############################################################
-        # for fill_sub in range(start_lecture_period, end_lecture_period):
-        #     table[lec_day][periods[fill_sub]] = subject_name, group_num
+        for subject_name in subject_table_to_check.keys() :
+            group_name = subject_table_to_check[subject_name][subject_name]
+            for group_num in group_name.keys() :
+                lec_day = group_name[group_num]['lecture']['Day']
+                start_lecture_period = group_name[group_num]["lecture"]["period"]["S_P"] - 1
+                end_lecture_period = group_name[group_num]["lecture"]["period"]["E_P"]
+        # fill lecture period  in table
+        ##############################################################
+        for fill_sub in range(start_lecture_period, end_lecture_period):
+            table[lec_day][periods[fill_sub]] = subject_name, group_num
         ###############################################################
         for subject_name_section in subject_table_to_check.keys() :
             group_name_section = subject_table_to_check[subject_name_section][subject_name_section]
@@ -118,23 +118,44 @@ class Subject_Manger():
         result = list(combinations)
         return result
 
-    def table_viewer(self):
-        # take table from section and put it in list
-        # return list of success tables
-        ##########
-        #fill table in lectures
-        #fill table in sections
+    def table_viewer(self , subject_table_to_check:dict ):
+        periods = ["p1", "p2", "p3", "p4", "p5", "p6", 'p7', "p8"]
+        table = {"D1": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''},
+                 "D2": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''},
+                 "D3": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''},
+                 "D4": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''},
+                 "D5": {"p1": '', "p2": '', "p3": '', "p4": '', "p5": '', "p6": '', 'p7': '', "p8": ''}}
+        # main variables
+        for subject_name in subject_table_to_check.keys():
+            group_name = subject_table_to_check[subject_name][subject_name]
+            for group_num in group_name.keys():
+                lec_day = group_name[group_num]['lecture']['Day']
+                start_lecture_period = group_name[group_num]["lecture"]["period"]["S_P"] - 1
+                end_lecture_period = group_name[group_num]["lecture"]["period"]["E_P"]
+        # fill lecture period  in table
+        ##############################################################
+                for fill_sub in range(start_lecture_period, end_lecture_period):
+                    table[lec_day][periods[fill_sub]] = subject_name, group_num
+
+        ###############################################################
+        for subject_name_section in subject_table_to_check.keys() :
+            group_name_section = subject_table_to_check[subject_name_section][subject_name_section]
+            for group_num_section in group_name_section.keys() :
+                sec_day = group_name_section[group_num_section]['section']['Day']
+                start_section_period = group_name_section[group_num_section]["section"]["period"]["S_P"] - 1
+                end_sectione_period = group_name_section[group_num_section]["section"]["period"]["E_P"]
+                period_availabity_checker = []
+        # fill table in sections
+        #################################################################
+                for fill_sub_section in range(start_section_period, end_sectione_period):
+                    table[sec_day][periods[fill_sub_section]] = subject_name_section, group_num_section
+        ##################################################################
+        return table
+
         #save in new list by (table+counter) -> table 1 , table 2 , .....
 
-        pass
 
-    # def convert_syntax(self, materials: dict):
-    #     sub_material = Subject_Manger().subject_generator(materials)
-    #     for mat_counter in range(len(sub_material)):
-    #         new_mat = {}
-    #         for mat_counter in list(sub_material[mat_counter]):
-    #             r = str(mat_counter.keys()).split("'")[1]
-    #             new_mat[r] = mat_counter
+
 
 
 

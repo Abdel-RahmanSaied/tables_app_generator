@@ -17,8 +17,12 @@ for mat_counter in range(len(sub_material)):
         new_mat[r] = mat_counter
     lec_check = Subject_Manger().lecture_checker(new_mat)
     if lec_check == None:
+        #sections part
+        sec_check = Subject_Manger().section_checker(new_mat)
+        if sec_check == None :
+            table_fill = Subject_Manger().table_viewer(new_mat)
+            print(f" table = {table_fill}")
 
-        print(True)
-    else:
-        print(False)
+
+
     # print(lec_check)
