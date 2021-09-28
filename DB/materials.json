@@ -8,7 +8,7 @@
                       "section": {"Day" : "D3" , "period": {"S_P":4 , "E_P":5}}}
   }},
   "physics":{"Groups":{
-                "G1":{"lecture": {"Day":"D1", "period":{"S_P":1 , "E_P":3}} ,
+                "G1":{"lecture": {"Day":"D1", "period":{"S_P":4 , "E_P":6}} ,
                       "section": {"Day" : "D3" , "period": {"S_P":3 , "E_P":4}}},
                 "G2":{"lecture": {"Day":"D1", "period":{"S_P":4 , "E_P":6}} ,
                       "section": {"Day" : "D3" , "period": {"S_P":3 , "E_P":4}}},
