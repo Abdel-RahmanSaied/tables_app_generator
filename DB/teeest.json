@@ -1,0 +1,53 @@
+{
+    "Data communication":{"Groups":{
+                  "G1": {"lecture": {"Day":"D1", "period":{"S_P":6 , "E_P":8}} ,
+                        "section": {"Day" : "D4" , "period": {"S_P":1 , "E_P":2}}},
+                  "G2": {"lecture": {"Day":"D1", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D4" , "period": {"S_P":7 , "E_P":8}}},
+                  "G3": {"lecture": {"Day":"D3", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D5" , "period": {"S_P":4 , "E_P":5}}},
+                  "G4": {"lecture": {"Day":"D3", "period":{"S_P":4 , "E_P":6}} ,
+                        "section": {"Day" : "D5" , "period": {"S_P":1 , "E_P":2}}},
+                  "G5": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D2" , "period": {"S_P":4 , "E_P":5}}},
+                  "G6": {"lecture": {"Day":"D1", "period":{"S_P":6 , "E_P":8}} ,
+                        "section": {"Day" : "D3" , "period": {"S_P":4 , "E_P":5}}}
+    }},
+    "SW(2)":{"Groups":{
+                  "G1":{"lecture": {"Day":"D2", "period":{"S_P":4 , "E_P":6}} ,
+                        "section": {"Day" : "D3" , "period": {"S_P":4 , "E_P":5}}},
+                  "G2":{"lecture": {"Day":"D2", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D5" , "period": {"S_P":1 , "E_P":2}}},
+                  "G3": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D2" , "period": {"S_P":7 , "E_P":8}}},
+                  "G4": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D3" , "period": {"S_P":7 , "E_P":8}}},
+                  "G5": {"lecture": {"Day":"D2", "period":{"S_P":4 , "E_P":6}} ,
+                        "section": {"Day" : "D3" , "period": {"S_P":1 , "E_P":2}}},
+                  "G6": {"lecture": {"Day":"D2", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D2" , "period": {"S_P":7 , "E_P":8}}},
+                  "G7": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                        "section": {"Day" : "D5" , "period": {"S_P":7 , "E_P":8}}},
+                  "G8": {"lecture": {"Day":"D5", "period":{"S_P":4 , "E_P":6}} ,
+                        "section": {"Day" : "D5" , "period": {"S_P":7 , "E_P":8}}}
+    }} ,
+    "Network programming": { "Groups": {
+            "G1":{"lecture": {"Day":"D1", "period":{"S_P":1 , "E_P":3}} ,
+                "section": {"Day" :"D4" , "period": {"S_P":4 , "E_P":5}}} ,
+            "G2":{"lecture": {"Day":"D2", "period":{"S_P":1 , "E_P":3}} ,
+                "section": {"Day" :"D4" , "period": {"S_P":7 , "E_P":8}}} ,
+            "G3": {"lecture": {"Day":"D5", "period":{"S_P":6 , "E_P":8}} ,
+                "section": {"Day" :"D4" , "period": {"S_P":2 , "E_P":3}}},
+            "G4": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                "section": {"Day" : "D4" , "period": {"S_P":7 , "E_P":8}}},
+            "G5": {"lecture": {"Day":"D1", "period":{"S_P":1 , "E_P":3}} ,
+                "section": {"Day" : "D2" , "period": {"S_P":7 , "E_P":8}}},
+            "G6": {"lecture": {"Day":"D1", "period":{"S_P":4 , "E_P":6}} ,
+                "section": {"Day" : "D3" , "period": {"S_P":1 , "E_P":2}}},
+            "G7": {"lecture": {"Day":"D5", "period":{"S_P":6 , "E_P":8}} ,
+                "section": {"Day" : "D1" , "period": {"S_P":4 , "E_P":5}}},
+            "G8": {"lecture": {"Day":"D5", "period":{"S_P":1 , "E_P":3}} ,
+                "section": {"Day" : "D4" , "period": {"S_P":1 , "E_P":2}}}
+    }}
+
+}
